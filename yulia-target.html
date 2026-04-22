@@ -23,10 +23,10 @@ html{scroll-behavior:smooth;}
 body{background:var(--bg-main);color:var(--text-main);font-family:'Manrope',sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
 a{text-decoration:none;color:inherit;}
 img{display:block;max-width:100%;}
-
+ 
 /* ── CONTAINER ── */
 .container{max-width:1200px;margin:0 auto;padding:0 1.5rem;}
-
+ 
 /* ── NAV ── */
 nav{
   position:fixed;top:0;left:0;width:100%;z-index:50;
@@ -104,21 +104,21 @@ nav.scrolled{box-shadow:0 2px 12px rgba(0,0,0,.08);}
   .nav-logo{border-right:none;padding:0 1.5rem;}
   .nav-inner{min-height:70px;}
 }
-
+ 
 /* ── BUTTONS ── */
 .btn-primary{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;background:linear-gradient(90deg,var(--accent),var(--accent-sec));color:#fff;font-weight:800;padding:1rem 2.5rem;border-radius:1rem;box-shadow:var(--shadow-accent);transition:all .3s;cursor:pointer;border:none;font-family:'Manrope',sans-serif;font-size:1rem;}
 .btn-primary:hover{transform:scale(1.05);}
 .btn-secondary{display:inline-flex;align-items:center;justify-content:center;border:2px solid var(--accent);color:var(--accent);font-weight:800;padding:1rem 2.5rem;border-radius:1rem;transition:all .3s;cursor:pointer;}
 .btn-secondary:hover{background:rgba(72,17,115,.05);}
-
+ 
 /* ── GLASS CARD ── */
 .glass-card{background:#fff;border:1px solid rgba(0,0,0,.05);border-radius:1.5rem;box-shadow:0 1px 3px rgba(0,0,0,.05);transition:all .3s;}
 .glass-card:hover{box-shadow:0 20px 40px rgba(0,0,0,.1);border-color:rgba(72,17,115,.1);transform:translateY(-6px);}
-
+ 
 /* ── SECTION GLOW ── */
 .section-glow{position:relative;overflow:hidden;}
 .section-glow::after{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:800px;height:800px;background:rgba(203,17,171,.05);filter:blur(150px);border-radius:50%;z-index:0;pointer-events:none;}
-
+ 
 /* ════════════════════════════════
    HERO
 ════════════════════════════════ */
@@ -134,13 +134,16 @@ nav.scrolled{box-shadow:0 2px 12px rgba(0,0,0,.08);}
 .hero-check span{font-size:1rem;font-weight:400;color:var(--text-main);}
 .hero-cta-row{display:flex;flex-wrap:wrap;align-items:center;gap:1.5rem;}
 .hero-note{font-size:.75rem;color:var(--text-sec);max-width:12rem;line-height:1.5;}
-
+ 
+/* --- ИСПРАВЛЕНИЕ ЗДЕСЬ --- */
 /* Analytics card */
-.analytics-wrap{position:relative;margin-top:2.5rem;}
-@media(min-width:1100px){
-  .analytics-wrap{position:absolute;left:calc(100% + 2rem);bottom:0;width:400px;margin-top:0;}
-  .hero-col{position:relative;}
+.analytics-wrap{
+  position:relative;
+  margin-top:2.5rem;
+  max-width:400px; /* Ограничиваем ширину, чтобы выглядело аккуратно */
 }
+/* Я убрал правило, которое сдвигало карточку вправо на больших экранах. Теперь она всегда в потоке документа */
+
 .analytics-card{padding:2rem;position:relative;overflow:hidden;background:#fff;}
 .analytics-dots{display:flex;gap:.375rem;margin-bottom:2rem;}
 .analytics-dots span{width:.5rem;height:.5rem;border-radius:50%;}
@@ -164,7 +167,7 @@ nav.scrolled{box-shadow:0 2px 12px rgba(0,0,0,.08);}
 @keyframes floatUp{0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);}}
 @keyframes floatDown{0%,100%{transform:translateY(0);}50%{transform:translateY(10px);}}
 .analytics-glow{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:120%;height:120%;background:rgba(72,17,115,.05);filter:blur(100px);border-radius:50%;z-index:-1;}
-
+ 
 /* ════════════════════════════════
    PAIN POINTS
 ════════════════════════════════ */
@@ -178,7 +181,7 @@ nav.scrolled{box-shadow:0 2px 12px rgba(0,0,0,.08);}
 .pain-card p{color:var(--text-sec);font-size:.875rem;line-height:1.7;}
 .pain-bottom{text-align:center;margin-top:4rem;font-size:1.25rem;font-weight:500;color:rgba(36,36,36,.8);}
 .pain-bottom .u{color:var(--accent);text-decoration:underline;text-decoration-color:rgba(72,17,115,.3);text-underline-offset:.5rem;}
-
+ 
 /* ════════════════════════════════
    SOLUTION
 ════════════════════════════════ */
@@ -194,7 +197,7 @@ nav.scrolled{box-shadow:0 2px 12px rgba(0,0,0,.08);}
 .sol-icon svg{width:1.5rem;height:1.5rem;}
 .sol-item h3{font-size:1.0625rem;font-weight:700;margin-bottom:.75rem;}
 .sol-item p{color:var(--text-sec);font-size:.875rem;line-height:1.6;}
-
+ 
 /* ════════════════════════════════
    INCLUDED
 ════════════════════════════════ */
@@ -214,7 +217,7 @@ nav.scrolled{box-shadow:0 2px 12px rgba(0,0,0,.08);}
 .transparency-card p{color:var(--text-sec);line-height:1.7;margin-bottom:1.5rem;}
 .transparency-card .trust-badge{display:flex;align-items:center;gap:.5rem;color:var(--accent-sec);font-size:.875rem;font-weight:700;}
 .transparency-card .trust-badge svg{width:1.25rem;height:1.25rem;}
-
+ 
 /* ════════════════════════════════
    PROCESS
 ════════════════════════════════ */
@@ -239,7 +242,7 @@ nav.scrolled{box-shadow:0 2px 12px rgba(0,0,0,.08);}
   .tl-card,.tl-item:nth-child(odd) .tl-card,.tl-item:nth-child(even) .tl-card{width:100%;padding:1.5rem;}
   .tl-dot{display:none;}
 }
-
+ 
 /* ════════════════════════════════
    CASES
 ════════════════════════════════ */
@@ -269,7 +272,7 @@ nav.scrolled{box-shadow:0 2px 12px rgba(0,0,0,.08);}
 .scroll-progress{height:100%;background:var(--accent);border-radius:9999px;animation:scrollBar 3s linear infinite;}
 @keyframes scrollBar{from{transform:translateX(-100%);}to{transform:translateX(100%);}}
 .scroll-hint span{font-size:.625rem;color:var(--text-sec);text-transform:uppercase;letter-spacing:.1em;font-weight:700;}
-
+ 
 /* ════════════════════════════════
    ABOUT
 ════════════════════════════════ */
@@ -291,7 +294,7 @@ nav.scrolled{box-shadow:0 2px 12px rgba(0,0,0,.08);}
 .about-tag{display:flex;align-items:center;gap:.75rem;background:var(--bg-secondary);padding:.75rem;border-radius:.75rem;border:1px solid rgba(0,0,0,.05);}
 .about-tag svg{width:1rem;height:1rem;color:var(--accent);}
 .about-tag span{font-size:.75rem;font-weight:700;color:rgba(36,36,36,.8);}
-
+ 
 /* ════════════════════════════════
    PRICING — 3 COLUMNS
 ════════════════════════════════ */
@@ -378,7 +381,7 @@ nav.scrolled{box-shadow:0 2px 12px rgba(0,0,0,.08);}
 .pricing-col--featured .pc-btn{background:rgba(255,255,255,.2);color:#fff;border-color:rgba(255,255,255,.4);}
 .pricing-col--featured .pc-btn:hover{background:rgba(255,255,255,.3);}
 .pc-note{font-size:.65rem;color:rgba(255,255,255,.5);margin-top:1rem;line-height:1.5;text-align:center;}
-
+ 
 /* ════════════════════════════════
    FAQ
 ════════════════════════════════ */
@@ -395,7 +398,7 @@ nav.scrolled{box-shadow:0 2px 12px rgba(0,0,0,.08);}
 .faq-body{max-height:0;overflow:hidden;transition:max-height .35s ease,padding .35s ease;}
 .faq-body.open{max-height:500px;padding-bottom:1.5rem;}
 .faq-body p{color:var(--text-sec);line-height:1.8;white-space:pre-line;}
-
+ 
 /* ════════════════════════════════
    CONTACT
 ════════════════════════════════ */
@@ -409,7 +412,7 @@ nav.scrolled{box-shadow:0 2px 12px rgba(0,0,0,.08);}
 .form-input{width:100%;background:var(--bg-secondary);border:1px solid rgba(0,0,0,.05);border-radius:1rem;padding:1rem 1.5rem;font-family:'Manrope',sans-serif;font-size:1rem;color:var(--text-main);transition:border-color .2s;outline:none;}
 .form-input:focus{border-color:var(--accent);}
 .form-note{text-align:center;font-size:.75rem;color:var(--text-sec);margin-top:1.5rem;}
-
+ 
 /* ════════════════════════════════
    FOOTER
 ════════════════════════════════ */
@@ -429,7 +432,7 @@ footer{padding:3rem 0;background:var(--bg-secondary);border-top:1px solid rgba(0
 .footer-copy{font-size:.625rem;color:rgba(0,0,0,.2);text-transform:uppercase;letter-spacing:.1em;}
 .footer-policy{font-size:.625rem;color:rgba(0,0,0,.2);text-transform:uppercase;letter-spacing:.1em;transition:color .2s;}
 .footer-policy:hover{color:var(--accent);}
-
+ 
 /* ── FADE-IN ── */
 .fade{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease;}
 .fade.visible{opacity:1;transform:translateY(0);}
@@ -439,13 +442,13 @@ footer{padding:3rem 0;background:var(--bg-secondary);border-top:1px solid rgba(0
 .fade-right.visible{opacity:1;transform:translateX(0);}
 .d1{transition-delay:.1s;} .d2{transition-delay:.2s;} .d3{transition-delay:.3s;}
 .d4{transition-delay:.4s;} .d5{transition-delay:.5s;}
-
+ 
 /* SVG icons inline */
 svg{display:inline-block;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
 </style>
 </head>
 <body>
-
+ 
 <!-- NAV -->
 <nav id="navbar">
   <div class="nav-inner">
@@ -471,7 +474,7 @@ svg{display:inline-block;fill:none;stroke:currentColor;stroke-width:2;stroke-lin
     <a href="#contact" onclick="closeMob()" class="btn-primary" style="text-align:center;margin-top:.5rem;">Получить консультацию</a>
   </div>
 </nav>
-
+ 
 <!-- HERO -->
 <section class="hero section-glow">
   <div class="container">
@@ -487,10 +490,9 @@ svg{display:inline-block;fill:none;stroke:currentColor;stroke-width:2;stroke-lin
         <div class="hero-check"><div class="hero-check-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="8" r="6"/><circle cx="8" cy="8" r="2.5" stroke-width="1.5"/></svg></div><span>Снижение стоимости привлечения клиента (CAC)</span></div>
         <div class="hero-check"><div class="hero-check-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="8" r="6"/><circle cx="8" cy="8" r="2.5" stroke-width="1.5"/></svg></div><span>Полная прозрачность: вы видите каждый рубль</span></div>
       </div>
-
+ 
       <!-- Analytics Card -->
-      <div style="position:relative;margin-bottom:4rem;">
-        <div class="analytics-wrap glass-card analytics-card fade d2">
+      <div class="analytics-wrap glass-card analytics-card fade d2">
           <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:2rem;">
             <div class="analytics-dots">
               <span style="background:rgba(239,68,68,.3);"></span>
@@ -519,17 +521,16 @@ svg{display:inline-block;fill:none;stroke:currentColor;stroke-width:2;stroke-lin
             </div>
           </div>
           <div class="analytics-glow"></div>
-        </div>
       </div>
-
-      <div class="hero-cta-row">
+      
+      <div class="hero-cta-row" style="margin-top:2.5rem;">
         <a href="#contact" class="btn-primary">Увеличить продажи сейчас <svg width="20" height="20"><line x1="5" y1="10" x2="15" y2="10"/><polyline points="11,6 15,10 11,14"/></svg></a>
         <p class="hero-note">Бесплатный аудит вашей карточки перед запуском</p>
       </div>
     </div>
   </div>
 </section>
-
+ 
 <!-- PAIN POINTS -->
 <section class="pain">
   <div class="container">
@@ -546,7 +547,7 @@ svg{display:inline-block;fill:none;stroke:currentColor;stroke-width:2;stroke-lin
     <div class="pain-bottom fade">Всё это — <span class="u">решается</span>. Если реклама сделана правильно.</div>
   </div>
 </section>
-
+ 
 <!-- SOLUTION -->
 <section class="solution section-glow" id="услуги">
   <div class="container">
@@ -563,7 +564,7 @@ svg{display:inline-block;fill:none;stroke:currentColor;stroke-width:2;stroke-lin
     </div>
   </div>
 </section>
-
+ 
 <!-- INCLUDED -->
 <section class="included">
   <div class="container included-grid">
@@ -591,7 +592,7 @@ svg{display:inline-block;fill:none;stroke:currentColor;stroke-width:2;stroke-lin
     </div>
   </div>
 </section>
-
+ 
 <!-- PROCESS -->
 <section class="process">
   <div class="container">
@@ -606,7 +607,7 @@ svg{display:inline-block;fill:none;stroke:currentColor;stroke-width:2;stroke-lin
     </div>
   </div>
 </section>
-
+ 
 <!-- CASES -->
 <section class="cases section-glow" id="кейсы">
   <div class="container">
@@ -622,7 +623,7 @@ svg{display:inline-block;fill:none;stroke:currentColor;stroke-width:2;stroke-lin
     <div class="scroll-hint"><div class="scroll-bar"><div class="scroll-progress"></div></div><span>Листайте вправо</span></div>
   </div>
 </section>
-
+ 
 <!-- ABOUT -->
 <section class="about" id="отзывы">
   <div class="container about-grid">
@@ -652,14 +653,14 @@ svg{display:inline-block;fill:none;stroke:currentColor;stroke-width:2;stroke-lin
     </div>
   </div>
 </section>
-
+ 
 <!-- PRICING -->
 <section class="pricing section-glow" id="тарифы">
   <div class="container">
     <h2 class="section-title fade">Стоимость работы</h2>
     <p class="section-sub fade d1">Прозрачные условия без скрытых платежей</p>
     <div class="pricing-grid">
-
+ 
       <!-- Колонка 1: САЙТ-ГИПНОЗ -->
       <div class="glass-card pricing-col fade d1">
         <div class="pc-head">
@@ -682,7 +683,7 @@ svg{display:inline-block;fill:none;stroke:currentColor;stroke-width:2;stroke-lin
         </ul>
         <a href="#contact" class="btn-secondary pc-btn">Заказать</a>
       </div>
-
+ 
       <!-- Колонка 2: РЕКЛАМА (выделенная) -->
       <div class="glass-card pricing-col pricing-col--featured fade d2">
         <div class="pricing-ribbon-v2">Популярно</div>
@@ -707,7 +708,7 @@ svg{display:inline-block;fill:none;stroke:currentColor;stroke-width:2;stroke-lin
         <a href="#contact" class="btn-primary pc-btn">Начать работу</a>
         <p class="pc-note">* Рекламный бюджет оплачивается отдельно. Рекомендуем от 15 000 ₽/мес.</p>
       </div>
-
+ 
       <!-- Колонка 3: ВОРОНКА ПОД КЛЮЧ -->
       <div class="glass-card pricing-col fade d3">
         <div class="pc-head">
@@ -730,11 +731,11 @@ svg{display:inline-block;fill:none;stroke:currentColor;stroke-width:2;stroke-lin
         </ul>
         <a href="#contact" class="btn-secondary pc-btn">Заказать</a>
       </div>
-
+ 
     </div>
   </div>
 </section>
-
+ 
 <!-- FAQ -->
 <section class="faq">
   <div class="container faq-wrap">
@@ -742,7 +743,7 @@ svg{display:inline-block;fill:none;stroke:currentColor;stroke-width:2;stroke-lin
     <div class="glass-card faq-card fade d1" id="faqList"></div>
   </div>
 </section>
-
+ 
 <!-- CONTACT -->
 <section class="contact section-glow" id="contact">
   <div class="container">
@@ -759,7 +760,7 @@ svg{display:inline-block;fill:none;stroke:currentColor;stroke-width:2;stroke-lin
     </div>
   </div>
 </section>
-
+ 
 <!-- FOOTER -->
 <footer>
   <div class="container">
@@ -791,27 +792,29 @@ svg{display:inline-block;fill:none;stroke:currentColor;stroke-width:2;stroke-lin
     </div>
   </div>
 </footer>
-
+ 
 <script>
 // ── NAV SCROLL ──
 const navbar = document.getElementById('navbar');
 window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', scrollY > 50));
-
+ 
 // ── MOBILE MENU ──
 const ham = document.getElementById('hamburger');
 const mob = document.getElementById('mobile-nav');
 ham.addEventListener('click', () => { const o = mob.classList.toggle('open'); ham.textContent = o ? '✕' : '☰'; });
 function closeMob(){ mob.classList.remove('open'); ham.textContent = '☰'; }
-
+ 
 // ── CHART BARS ──
 const heights = [40,70,45,90,65,85,55,95,75,100];
 const barsEl = document.getElementById('chartBars');
-heights.forEach((h, i) => {
-  const d = document.createElement('div');
-  d.style.cssText = `flex:1;background:rgba(72,17,115,.35);border-radius:2px 2px 0 0;height:${h}%;animation-delay:${0.5+i*0.05}s;`;
-  barsEl.appendChild(d);
-});
-
+if(barsEl) {
+    heights.forEach((h, i) => {
+      const d = document.createElement('div');
+      d.style.cssText = `flex:1;background:rgba(72,17,115,.35);border-radius:2px 2px 0 0;height:${h}%;animation-delay:${0.5+i*0.05}s;`;
+      barsEl.appendChild(d);
+    });
+}
+ 
 // ── CASES ──
 const cases = [
   {cat:'Товары для дома',was:'CTR 0.4%, цена клика 45 ₽',now:'CTR 2.1%, цена клика 6 ₽',extra:'8 400 переходов за месяц',bg:'linear-gradient(135deg,rgba(168,85,247,.2),rgba(203,17,171,.2))'},
@@ -826,21 +829,23 @@ const cases = [
   {cat:'Автотовары',was:'CTR 0.5%',now:'CTR 1.8%, цена клика 6.5 ₽',extra:'Стабильный поток заказов',bg:'linear-gradient(135deg,rgba(107,114,128,.2),rgba(71,85,105,.2))'},
 ];
 const scroll = document.getElementById('casesScroll');
-cases.forEach(c => {
-  scroll.innerHTML += `<div class="glass-card case-card">
-    <div class="case-thumb" style="background:${c.bg};">
-      <svg width="48" height="48"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
-      <div class="case-thumb-overlay"></div>
-      <div class="case-badge">${c.cat}</div>
-    </div>
-    <div class="case-body">
-      <div class="case-row divider"><span class="lbl">Было:</span><span class="was">${c.was}</span></div>
-      <div class="case-row"><span class="lbl">Стало:</span><span class="now">${c.now}</span></div>
-      <div class="case-extra">${c.extra}</div>
-    </div>
-  </div>`;
-});
-
+if(scroll) {
+    cases.forEach(c => {
+      scroll.innerHTML += `<div class="glass-card case-card">
+        <div class="case-thumb" style="background:${c.bg};">
+          <svg width="48" height="48"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+          <div class="case-thumb-overlay"></div>
+          <div class="case-badge">${c.cat}</div>
+        </div>
+        <div class="case-body">
+          <div class="case-row divider"><span class="lbl">Было:</span><span class="was">${c.was}</span></div>
+          <div class="case-row"><span class="lbl">Стало:</span><span class="now">${c.now}</span></div>
+          <div class="case-extra">${c.extra}</div>
+        </div>
+      </div>`;
+    });
+}
+ 
 // ── FAQ ──
 const faqs = [
   {q:'Я уже пробовал таргет — не получил результат.',a:'Чаще всего это случается из-за отсутствия стратегии: реклама запускалась без анализа аудитории, без теста гипотез и без оптимизации. Моя работа начинается именно с этого — и только потом запуск. Мы находим то, что реально работает.'},
@@ -852,23 +857,25 @@ const faqs = [
   {q:'Как начать работу?',a:'Оставьте заявку → я свяжусь с вами → проведём бесплатный разбор вашей карточки → обсудим стратегию и условия → запускаемся.'},
 ];
 const faqList = document.getElementById('faqList');
-faqs.forEach((f, i) => {
-  const item = document.createElement('div');
-  item.className = 'faq-item';
-  item.innerHTML = `<button class="faq-btn" onclick="toggleFaq(${i})">
-    <h3>${f.q}</h3>
-    <svg class="faq-arrow" id="arrow${i}" width="20" height="20"><polyline points="6,9 12,15 18,9"/></svg>
-  </button>
-  <div class="faq-body" id="body${i}"><p>${f.a}</p></div>`;
-  faqList.appendChild(item);
-});
+if(faqList) {
+    faqs.forEach((f, i) => {
+      const item = document.createElement('div');
+      item.className = 'faq-item';
+      item.innerHTML = `<button class="faq-btn" onclick="toggleFaq(${i})">
+        <h3>${f.q}</h3>
+        <svg class="faq-arrow" id="arrow${i}" width="20" height="20"><polyline points="6,9 12,15 18,9"/></svg>
+      </button>
+      <div class="faq-body" id="body${i}"><p>${f.a}</p></div>`;
+      faqList.appendChild(item);
+    });
+}
 function toggleFaq(i){
   const body = document.getElementById('body'+i);
   const arrow = document.getElementById('arrow'+i);
   const open = body.classList.toggle('open');
   arrow.classList.toggle('open', open);
 }
-
+ 
 // ── COUNTER ──
 function animateCounter(el){
   const target = parseFloat(el.dataset.counter);
@@ -883,7 +890,7 @@ function animateCounter(el){
     if(frame >= frames){ el.textContent = (isFloat ? target.toFixed(1) : target) + suffix; clearInterval(t); }
   }, 1000/fps);
 }
-
+ 
 // ── INTERSECTION OBSERVER ──
 const io = new IntersectionObserver(entries => {
   entries.forEach(e => {
@@ -891,16 +898,17 @@ const io = new IntersectionObserver(entries => {
       e.target.classList.add('visible');
       // counter
       if(e.target.dataset.counter) animateCounter(e.target);
+      io.unobserve(e.target);
     }
   });
 }, {threshold:.15});
 document.querySelectorAll('.fade,.fade-left,.fade-right').forEach(el => io.observe(el));
 document.querySelectorAll('[data-counter]').forEach(el => io.observe(el));
-
+ 
 // ── FORM ──
 function handleSubmit(e){
   e.preventDefault();
-  const btn = e.target;
+  const btn = e.target.closest('button');
   btn.textContent = '✔ Отправлено!';
   btn.style.background = 'var(--success)';
   setTimeout(() => { btn.innerHTML = 'Написать Юлии <svg width="20" height="20"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22,2 15,22 11,13 2,9"/></svg>'; btn.style.background=''; }, 3000);
